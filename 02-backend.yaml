@@ -1,0 +1,10 @@
+- name: configure backend server
+  hosts: backend
+  become: yes
+  vars:
+   root_password: ExpenseApp@1
+   login_host: 3.93.17.198
+  tasks:
+  - name: disable default nodejs
+    ansible.builtin.command: dnf module disable nodejs -y
+    
